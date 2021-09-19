@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "/css/bootstrap.min.css" %}">
+    <style>
+        .content{
+            padding: 175px;
+            background-image: linear-gradient(purple, pink);
+        }
+        nav{
+            background-color: #CD6839;
+        }
+        .footer{
+            font-weight: bold;
+            padding: 15px;
+            background-color: #3366CC;
+        }
+        a{
+            font-weight: bold;
+            color: white;
+        }
+        .slogan h1,h2{
+        }
+        line{
+            width: 40%;
+            size: 50px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top justify-content-center">
+        <a class="navbar-brand " href="/"><img src="{% static "image/logo.png" %}" width=50px height=50px></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link {% if nav == 'about' %}active {% endif %}"
+                       href="{% url 'about' %}">Giới Thiệu<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tính Năng</a>
+                </li>
+                <li class="nav-item float-right">
+                    <a class="nav-link" href="#">Trò Chơi</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-nav ml-3">
+        <li class="nav-item">
+          <a class="nav-link"  href=""><strong>LogIn</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=""><strong>Register</strong></a>
+        </li>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+<!--footer-->
+    <div class="footer container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <p>© 2021 ThaiWD.com • Đinh Hồng Thái • All Rights Reserved</p>
+            </div>
+            <div class="d-flex justify-content-end mr-3">
+                <a href="/">Trang chủ</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

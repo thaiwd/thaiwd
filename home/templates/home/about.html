@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %} Trang chủ - ThaiWD.com {% endblock %}
+
+{% block content %}
+<div class="content container-fluid">
+    <div class="row">
+        {% for item in info %}
+        <div class="col-sm-5">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="{% static "image/avt.png" %}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">{{ item.name }}</h4>
+                    <p class="card-text font-italic">Admin website</p>
+                    <p class="card-text">Ngày sinh: <strong>{{ item.birth }}</strong></p>
+                    <p class="card-text">Email: <strong>{{ item.email }}</strong></p>
+                    <p class="card-text">Số đt: <strong>{{ item.phone }}</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <h4 class="font-italic">{{ item.introduce }}</h4> <br/>
+            <h4 class="font-italic">{{ item.introduce2 }}</h4> <br/>
+            <h4 class="font-italic">{{ item.introduce3 }}</h4>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

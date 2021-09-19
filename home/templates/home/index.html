@@ -1,0 +1,38 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %} Trang chủ - ThaiWD.com {% endblock %}
+
+{% block content %}
+<div class="content container-fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="slogan">
+                <h1>ThaiWD.com</h1>
+                <h2 class="font-italic">Practice to Perfect</h2>
+            </div>
+            <hr/>
+            <div class="date">
+                <div class="card">
+                    <h5 class="card-text bg-primary p-3">Hôm nay: Ngày {{ today }}</h5>
+                    <h5 class="card-text p-3">Chúc bạn online vui vẻ</h5>
+                </div>
+                <div class="d-flex justify-content-center mr-3">
+                    <a href="/"><img src="{% static "image/logo.png" %}" width=250px height=250px></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="d-flex pb-5">
+                <h5 class="px-4">Subscribe my channel:</h5>
+                <a href="https://www.youtube.com/channel/UCFlk1Ue2nLSEohan-bfRn5w"><h5>Hồng Thái
+                    Đinh</h5></a>
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Y1iykRsFTUA"
+                    title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                     gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}
